@@ -566,7 +566,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/TestCorePlot\"",
 				);
-				OTHER_LDFLAGS = "-Objc";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,7 +582,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/TestCorePlot\"",
 				);
-				OTHER_LDFLAGS = "-Objc";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -641,6 +641,7 @@
 				A61C6EA91721251C0034C7DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A61C6EAA1721251C0034C7DD /* Build configuration list for PBXNativeTarget "TestCorePlotTests" */ = {
 			isa = XCConfigurationList;
@@ -649,6 +650,7 @@
 				A61C6EAC1721251C0034C7DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
