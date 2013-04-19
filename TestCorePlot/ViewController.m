@@ -32,6 +32,11 @@
      hostView.hostedGraph = graph;
     [self setupPoint];
     
+    /*
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 10 )]];
+    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 30 )]];
+    */
 }
 
 -(void)generateData
@@ -41,7 +46,16 @@
         
         for ( NSUInteger i = 0; i < 11; i++ ) {
             NSNumber *x = [NSNumber numberWithDouble:i];
-            NSNumber *y = [NSNumber numberWithDouble:i*3];
+            NSNumber *y;
+            if(i < 5)
+            {
+                y = [NSNumber numberWithDouble:i*3];
+            }
+            else
+            {
+                y = [NSNumber numberWithDouble:(10-i)*3];
+
+            }
             [plotDataArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x, @"x", y, @"y", nil]];
         }
         
@@ -78,7 +92,6 @@
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     NSNumber *num = nil;
-    
     num = [plotDataArray[index] valueForKey:(fieldEnum == CPTScatterPlotFieldX ? @"x":@"y")];
     
     return num;
