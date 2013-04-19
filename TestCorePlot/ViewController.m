@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     hostView = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
+    hostView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:hostView];
     [self setupGraph];
 }
