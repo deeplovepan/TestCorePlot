@@ -24,6 +24,10 @@
     dataSourceLinePlot.dataSource = self;
     [hostView.hostedGraph addPlot:dataSourceLinePlot];
 
+    CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy] ;
+    lineStyle.lineWidth = 3.0;
+    lineStyle.lineColor = [CPTColor greenColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
 }
 
 -(void)setupGraph
