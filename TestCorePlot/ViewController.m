@@ -18,16 +18,22 @@
 
 @implementation ViewController
 
+-(void)setupLineStyle:(CPTScatterPlot*)dataSourceLinePlot
+{
+    CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy] ;
+    lineStyle.lineWidth = 3.0;
+    lineStyle.lineColor = [CPTColor greenColor];
+    dataSourceLinePlot.dataLineStyle = lineStyle;
+}
+
 -(void)setupPoint
 {
     CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
     dataSourceLinePlot.dataSource = self;
     [hostView.hostedGraph addPlot:dataSourceLinePlot];
-
-    CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy] ;
-    lineStyle.lineWidth = 3.0;
-    lineStyle.lineColor = [CPTColor greenColor];
-    dataSourceLinePlot.dataLineStyle = lineStyle;
+    
+    [self setupLineStyle:dataSourceLinePlot];
+   
 }
 
 -(void)setupGraph
